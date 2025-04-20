@@ -147,7 +147,7 @@ elif choice == "Retrieve Data":
                     if st.session_state.failed_attempts >= 3:
                         st.warning("🔒 Too many failed attempts! Redirecting to Login Page.")
                         st.session_state.is_authenticated = False
-                        st.experimental_rerun()
+                        st.rerun()
             else:
                 st.error("❌ Data ID not found!")
         else:
@@ -163,6 +163,6 @@ elif choice == "Login":
         if login_pass == "admin123":  
             reset_attempts()
             st.success("✅ Reauthorized successfully! Redirecting...")
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.error("❌ Incorrect password!")
